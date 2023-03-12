@@ -1,1 +1,79 @@
-@import '../node_modules/normalize.css/normalize.css'
+@import '../node_modules/normalize.css/normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html {
+  width:100vw;
+  overflow-x:hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+}
+
+body {
+  background-color: rgba(238, 225, 179, 0.4);
+}
+
+.accordion {
+  max-width: 50%;
+  margin: 5vw auto;
+  padding: 0 2vw;
+}
+
+.accordion__title {
+  font-size: 4.4rem;
+  color: #330036;
+  padding: 1rem 0;
+  border-bottom: 0.6rem solid #56666B;
+}
+
+.accordion__list {
+  padding-left: 0;
+}
+
+.accordion__item {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-bottom: 2px solid #56666B;
+}
+
+.accordion__label {
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  flex-direction: column;
+
+}
+
+.accordion__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 4.4rem;
+  color: #38182F;
+}
+
+.btn {
+  background-image: url(./images/plus.svg);
+  background-position: center center;
+  background-size: cover;
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: transform 0.5s ease-out;
+}
+
+.img {
+  height: 0;
+  object-fit: contain;
+  transition: all 0.5s ease-in-out;
+}
+
+.accordion__input:checked ~ .accordion__label .img {
+  height: 35vw;
+}
+
+.accordion__input:checked ~ .accordion__label .btn {
+  transform: rotate(45deg);
+}
